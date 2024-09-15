@@ -33,7 +33,7 @@ public static class SwaggerConfig
                 Version = "v1",
                 Description = "Esta é a API para administração do Memory Cache.",
 
-            });
+  });
 
 
             options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
