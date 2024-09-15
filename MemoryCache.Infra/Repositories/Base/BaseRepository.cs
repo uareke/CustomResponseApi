@@ -80,7 +80,7 @@ public abstract class BaseRepository<T>(AppDBContext context) : IRepository<T> w
     public async Task<T> Get(long Id)
     {
         var entity = await _context.Set<T>().FindAsync(Id);
-        return entity ?? Activator.CreateInstance<T>();
+        return entity;
     }
 
 

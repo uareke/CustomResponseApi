@@ -21,19 +21,23 @@ public class ProdutoService: IProdutoService
         _produtoRepository = produtoRepository;
     }
 
-    public async Task<Produto> Get(long Id)
+    public async Task<Produto?> Get(long Id)
     {
-        string cacheKey = $"Produto_{Id}"; 
-        if (!_cache.TryGetValue(cacheKey, out Produto produto))
+        string cacheKey = $"Produto_{Id}";
+        if (!_cache.TryGetValue(cacheKey, out Produto? produto))
         {
             produto = await _produtoRepository.Get(Id);
+
             if (produto != null)
             {
-                var cacheOptions = new MemoryCacheEntryOptions()
-                    .SetSlidingExpiration(TimeSpan.FromMinutes(10));
+                var cacheOptions = new MemoryCacheEntryOptions
+                {
+                    SlidingExpiration = TimeSpan.FromMinutes(10)
+                };
                 _cache.Set(cacheKey, produto, cacheOptions);
             }
         }
+
         return produto;
     }
 

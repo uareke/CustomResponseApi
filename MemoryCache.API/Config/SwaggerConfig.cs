@@ -22,16 +22,16 @@ public static class SwaggerConfig
         {
             options.SwaggerDoc("v1", new OpenApiInfo
             {
-                Title = "spt-mobile-admin.api",
+                Title = "Memory Cache",
                 Version = "v1",
-                Description = "Esta é a API para administração do spt mobile.",
+                Description = "Esta é a API para administração do Memory Cache",
             });
 
             options.SwaggerDoc("v2", new OpenApiInfo
             {
-                Title = "spt-mobile-admin.api",
+                Title = "Memory Cache",
                 Version = "v1",
-                Description = "Esta é a API para administração do spt mobile.",
+                Description = "Esta é a API para administração do Memory Cache.",
 
             });
 
