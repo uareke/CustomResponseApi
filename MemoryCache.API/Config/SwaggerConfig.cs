@@ -20,20 +20,20 @@ public static class SwaggerConfig
     {
         services.AddSwaggerGen(options =>
         {
-            options.SwaggerDoc("v1", new OpenApiInfo
-            {
-                Title = "spt-mobile-admin.api",
-                Version = "v1",
-                Description = "Esta é a API para administração do spt mobile.",
-            });
+  options.SwaggerDoc("v1", new OpenApiInfo
+  {
+      Title = "Memory Cache",
+      Version = "v1",
+      Description = "Esta é a API para administração do Memory Cache",
+  });
 
-            options.SwaggerDoc("v2", new OpenApiInfo
-            {
-                Title = "spt-mobile-admin.api",
-                Version = "v1",
-                Description = "Esta é a API para administração do spt mobile.",
+  options.SwaggerDoc("v2", new OpenApiInfo
+  {
+      Title = "Memory Cache",
+      Version = "v1",
+      Description = "Esta é a API para administração do Memory Cache.",
 
-            });
+  });
 
 
             options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
